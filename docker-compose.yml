@@ -15,7 +15,7 @@ services:
     container_name: syncthing
     restart: on-failure
     stop_grace_period: 1m
-    user: sytncthing:sytncthing
+    user: 3113:3113
     deploy:
       resources:
         limits:
