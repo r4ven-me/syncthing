@@ -1,0 +1,5 @@
+Cmnd_Alias SYNC = \
+    /usr/bin/docker compose --file /opt/syncthing/docker-compose.yml up, \
+    /usr/bin/docker compose --file /opt/syncthing/docker-compose.yml down
+
+syncthing ALL = (:docker) NOPASSWD: SYNC

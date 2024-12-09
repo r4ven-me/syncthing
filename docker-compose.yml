@@ -1,0 +1,48 @@
+---
+
+### NETWORKS ###
+networks:
+  syncthing_network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+      com.docker.network.bridge.name: "br-syncthing"
+
+### SERVICES ###
+services:
+  syncthing:
+    image: syncthing/syncthing:1.28
+    container_name: syncthing
+    restart: on-failure
+    stop_grace_period: 1m
+    user: sytncthing:sytncthing
+    deploy:
+      resources:
+        limits:
+          cpus: '0.70'
+          memory: 512M
+        reservations:
+          cpus: '0.2'
+          memory: 256M
+    hostname: syncthing.r4ven.me
+    environment:
+      - PUID=3113
+      - PGID=3113
+      #- STGUIADDRESS='0.0.0.0:80'
+    volumes:
+      - ./data/:/var/syncthing/
+    # expose:
+    #   - 8384
+    #   - 22000/tcp
+    #   - 22000/udp
+    #   - 21027/udp
+    ports:
+      - 192.168.122.233:8384:8384 # Web UI
+      - 192.168.122.233:22000:22000/tcp # TCP file transfers
+      - 192.168.122.233:22000:22000/udp # QUIC file transfers
+      - 192.168.122.233:21027:21027/udp # Receive local discovery broadcasts
+    networks:
+      syncthing_network:
+        aliases:
+          - syncthing
+          - sync
