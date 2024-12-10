@@ -36,10 +36,10 @@ services:
     #   - 22000/udp
     #   - 21027/udp
     ports:
-      - 192.168.122.233:8384:8384 # Web UI
-      - 192.168.122.233:22000:22000/tcp # TCP file transfers
-      - 192.168.122.233:22000:22000/udp # QUIC file transfers
-      - 192.168.122.233:21027:21027/udp # Receive local discovery broadcasts
+      - 127.0.0.1:8384:8384 # Web UI
+      - 127.0.0.1:22000:22000/tcp # TCP file transfers
+      - 127.0.0.1:22000:22000/udp # QUIC file transfers
+      - 127.0.0.1:21027:21027/udp # Receive local discovery broadcasts
     networks:
       syncthing_network:
         aliases:
