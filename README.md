@@ -1,11 +1,11 @@
-# Install Syncthing - file synchronization server in docker
+# Syncthing - file synchronization server in docker
 
-- [Install Syncthing - file synchronization server in docker](#install-syncthing---file-synchronization-server-in-docker)
+- [Syncthing - file synchronization server in docker](#syncthing---file-synchronization-server-in-docker)
   - [Preparation](#preparation)
   - [Running Syncthing Server with Docker Compose](#running-syncthing-server-with-docker-compose)
     - [Setting up autostart with systemd](#setting-up-autostart-with-systemd)
-  - [Setting up a Syncthing server in the web interface](#setting-up-a-syncthing-server-in-the-web-interface)
-  - [Installing and connecting clients](#installing-and-connecting-clients)
+  - [Access to Syncthing server web interface](#access-to-syncthing-server-web-interface)
+  - [Installing clients](#installing-clients)
     - [Linux Mint](#linux-mint)
     - [Windows](#windows)
     - [Android](#android)
@@ -147,7 +147,7 @@ It should be like this:
 
 The server is up and running and ready to go😎!
 
-## Setting up a Syncthing server in the web interface
+## Access to Syncthing server web interface
 
 In my example, Syncthing, for security purposes, was launched on a local interface with the address `127.0.0.1`. If you are launching the service on a remote machine, then to access the Syncthing web interface, forward the required port (8384) on the client machine using the following SSH command:
 
@@ -175,7 +175,7 @@ Now open a web browser and enter:
 http://127.0.0.1:7777
 ```
 
-## Installing and connecting clients
+## Installing clients
 
 Syncthing clients exist for all popular platforms💻📱. You can find the full list [here](https://syncthing.net/downloads/) and [here](https://docs.syncthing.net/users/contrib.html) 😇.
 
